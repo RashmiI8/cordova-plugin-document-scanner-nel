@@ -17,8 +17,8 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.StrictMode;
 import android.util.Base64;
 
-import com.scanlibrary.ScanActivity;
-import com.scanlibrary.ScanConstants;
+import com.scanlibrarynel.ScanActivityNel;
+import com.scanlibrarynel.ScanConstants;
 
 import java.io.ByteArrayOutputStream;
 import java.net.URL;
@@ -65,7 +65,7 @@ public class Scan extends CordovaPlugin {
                 } else if (this.srcType == PHOTOLIBRARY) {
                     preference = ScanConstants.OPEN_MEDIA;
                 }
-                Intent intent = new Intent(cordova.getActivity().getApplicationContext(), ScanActivity.class);
+                Intent intent = new Intent(cordova.getActivity().getApplicationContext(), ScanActivityNel.class);
                 intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
                 intent.putExtra("quality", this.quality);
                 cordova.getActivity().startActivityForResult(intent, REQUEST_CODE);
